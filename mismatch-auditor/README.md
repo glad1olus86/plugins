@@ -53,17 +53,31 @@ Or via CLI:
 claude plugin install mismatch-auditor@glad1olus86-plugins
 ```
 
-During installation, Claude Code will prompt you for API keys:
+**3. Configure API keys** (at least one is required):
 
-- **groq_api_key_1** (required) — get one at [console.groq.com](https://console.groq.com)
-- **groq_api_key_2** (optional) — second key for rate-limit rotation
-- **openrouter_api_key** (optional) — fallback provider, get one at [openrouter.ai](https://openrouter.ai)
-- **threshold** — mismatch score threshold (default: 0.7)
-- **log_level** — verbosity (default: warn)
+```
+/mismatch-auditor:setup
+```
 
-Keys are stored in the system keychain (sensitive values) — not in plain text.
+This will show the current config status and guide you. Or configure directly:
 
-**3. Done.** The hook is active on every `Bash` tool call.
+**Via plugin config UI:**
+
+```
+/plugin configure mismatch-auditor
+```
+
+Paste your keys into the fields — text is fully visible, not masked.
+
+**Via environment variables** (add to `~/.bashrc` or `~/.zshrc`):
+
+```bash
+export GROQ_API_KEY_1=gsk_xxxxxxxxxxxx        # required — https://console.groq.com
+export GROQ_API_KEY_2=gsk_yyyyyyyyyyyy        # optional, rate-limit rotation
+export OPENROUTER_API_KEY=sk-or-xxxxxxxx      # optional fallback — https://openrouter.ai
+```
+
+**4. Done.** The hook is active on every `Bash` tool call.
 
 ### Option A2: Team-wide auto-install
 

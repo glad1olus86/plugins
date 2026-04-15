@@ -13,7 +13,7 @@
     {
       "name": "mismatch-auditor",
       "description": "Blocks bash commands that mismatch the agent's stated intent via LLM verification",
-      "version": "2.0.1",
+      "version": "2.0.2",
       "source": "./mismatch-auditor",
       "author": {
         "name": "Heorhii Priadkin"
