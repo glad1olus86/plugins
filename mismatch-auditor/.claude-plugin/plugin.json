@@ -1,6 +1,6 @@
 {
   "name": "mismatch-auditor",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Intent auditor: blocks bash commands that mismatch the agent's stated intent via external LLM verification (Groq, OpenRouter, Ollama)",
   "author": {
     "name": "Heorhii Priadkin",
