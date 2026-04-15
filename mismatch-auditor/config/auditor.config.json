@@ -1,0 +1,90 @@
+{
+  "providers": [
+    {
+      "name": "groq-primary",
+      "type": "groq",
+      "apiBase": "https://api.groq.com/openai/v1",
+      "model": "llama-3.1-8b-instant",
+      "envKey": "GROQ_API_KEY_1",
+      "pluginOptionKey": "CLAUDE_PLUGIN_OPTION_GROQ_API_KEY_1",
+      "priority": 1,
+      "rateLimit": {
+        "maxRequestsPerMinute": 30
+      }
+    },
+    {
+      "name": "groq-secondary",
+      "type": "groq",
+      "apiBase": "https://api.groq.com/openai/v1",
+      "model": "llama-3.3-70b-versatile",
+      "envKey": "GROQ_API_KEY_2",
+      "pluginOptionKey": "CLAUDE_PLUGIN_OPTION_GROQ_API_KEY_2",
+      "priority": 2,
+      "rateLimit": {
+        "maxRequestsPerMinute": 30
+      }
+    },
+    {
+      "name": "openrouter",
+      "type": "openrouter",
+      "apiBase": "https://openrouter.ai/api/v1",
+      "model": "meta-llama/llama-3.1-8b-instruct:free",
+      "envKey": "OPENROUTER_API_KEY",
+      "pluginOptionKey": "CLAUDE_PLUGIN_OPTION_OPENROUTER_API_KEY",
+      "priority": 3,
+      "rateLimit": {
+        "maxRequestsPerMinute": 20
+      },
+      "headers": {
+        "HTTP-Referer": "https://github.com/mismatch-auditor",
+        "X-Title": "Mismatch Auditor"
+      }
+    }
+  ],
+
+  "threshold": 0.7,
+
+  "allowlist": [
+    "^ls(\\s|$)",
+    "^pwd$",
+    "^echo ",
+    "^cat ",
+    "^head ",
+    "^tail ",
+    "^wc ",
+    "^git (status|log|diff|branch|show|remote|tag)",
+    "^node --version$",
+    "^npm (list|ls|info|view|outdated|audit)\\b",
+    "^npx tsc --noEmit",
+    "^which ",
+    "^type ",
+    "^env$",
+    "^date$",
+    "^whoami$",
+    "^uname"
+  ],
+
+  "denylist": [
+    "\\bsudo\\b",
+    "\\bcurl\\b.*\\|\\s*(sh|bash)",
+    "\\bchmod\\s+777\\b",
+    "\\brm\\s+-rf\\s+/(?!tmp)",
+    "\\bmkfs\\b",
+    "\\bdd\\s+if=",
+    ":(){ :\\|:& };:",
+    "\\beval\\b.*\\$\\(",
+    "\\bnc\\b.*-[el]",
+    "\\bbase64\\s+-d\\b.*\\|\\s*(sh|bash)"
+  ],
+
+  "cache": {
+    "enabled": true,
+    "maxSize": 256,
+    "ttlSeconds": 300
+  },
+
+  "logging": {
+    "level": "warn",
+    "file": null
+  }
+}

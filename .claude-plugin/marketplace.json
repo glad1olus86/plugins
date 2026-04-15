@@ -1,0 +1,24 @@
+{
+  "name": "glad1olus86-plugins",
+  "description": "Claude Code plugins by Heorhii Priadkin (@glad1olus86)",
+  "owner": {
+    "name": "Heorhii Priadkin",
+    "email": "heorhii@priadk.in"
+  },
+  "metadata": {
+    "description": "Collection of Claude Code plugins by glad1olus86",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "mismatch-auditor",
+      "description": "Blocks bash commands that mismatch the agent's stated intent via LLM verification",
+      "version": "2.0.0",
+      "source": "./mismatch-auditor",
+      "author": {
+        "name": "Heorhii Priadkin"
+      },
+      "category": "security"
+    }
+  ]
+}

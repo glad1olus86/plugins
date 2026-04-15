@@ -1,0 +1,36 @@
+{
+  "name": "mismatch-auditor",
+  "version": "2.0.0",
+  "description": "Intent auditor: blocks bash commands that mismatch the agent's stated intent via external LLM verification (Groq, OpenRouter, Ollama)",
+  "author": {
+    "name": "Heorhii Priadkin",
+    "email": "heorhii@priadk.in",
+    "url": "https://priadk.in"
+  },
+  "homepage": "https://priadk.in",
+  "license": "MIT",
+  "keywords": ["security", "auditor", "hooks", "intent-verification", "groq", "openrouter"],
+  "hooks": "./hooks/hooks.json",
+  "userConfig": {
+    "groq_api_key_1": {
+      "description": "Groq API key (primary). Get one at https://console.groq.com",
+      "sensitive": true
+    },
+    "groq_api_key_2": {
+      "description": "Groq API key (secondary, for rate-limit rotation). Optional.",
+      "sensitive": true
+    },
+    "openrouter_api_key": {
+      "description": "OpenRouter API key (fallback). Get one at https://openrouter.ai. Optional.",
+      "sensitive": true
+    },
+    "threshold": {
+      "description": "Mismatch score threshold for blocking (0.0-1.0). Default: 0.7",
+      "default": "0.7"
+    },
+    "log_level": {
+      "description": "Logging verbosity: debug, info, warn, error, silent. Default: warn",
+      "default": "warn"
+    }
+  }
+}

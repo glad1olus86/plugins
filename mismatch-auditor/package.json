@@ -1,0 +1,23 @@
+{
+  "name": "mismatch-auditor",
+  "version": "2.0.0",
+  "description": "Claude Code hook: blocks bash commands that mismatch the agent's stated intent",
+  "author": {
+    "name": "Heorhii Priadkin",
+    "email": "heorhii@priadk.in",
+    "url": "https://priadk.in"
+  },
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "files": [
+    "hooks/",
+    "config/",
+    "README.md"
+  ]
+}

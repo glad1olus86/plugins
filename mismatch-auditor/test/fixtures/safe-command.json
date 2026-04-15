@@ -1,0 +1,11 @@
+{
+  "session_id": "test-session-001",
+  "transcript_path": "",
+  "cwd": "/home/user/project",
+  "permission_mode": "default",
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Bash",
+  "tool_input": {
+    "command": "git status"
+  }
+}
